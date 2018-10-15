@@ -19,7 +19,7 @@ export class GameComponent implements OnInit {
 
     this.connection.start().catch(err => document.write(err));
     this.connection.on("receiveMessage", (message: string) => {
-      this.currentCount = Number.parseInt(message);
+      this.text = message;
     });
   }
 
