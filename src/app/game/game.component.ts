@@ -17,7 +17,7 @@ export class GameComponent implements OnInit {
       .withUrl("http://localhost:5000/game")
       .build();
 
-    this.connection.start().catch(err => document.write(err));
+    this.connection.start().catch(err => this.text = err);
     this.connection.on("receiveMessage", (message: string) => {
       this.text = message;
     });
